@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="GBK">
+<title>客户终端判断</title>
+<script type="text/javascript">
+function IsPC() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
+}
+var flag = IsPC();
+if (flag == false){
+	window.location.href="mobile.html";
+}else if (flag == true){
+	window.location.href="pc.html";
+}else{
+	alert("客户终端识别异常！")
+}
+</script>
+</head>
+<body>
+</body>
+</html>
